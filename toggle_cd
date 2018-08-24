@@ -1,0 +1,13 @@
+#!/bin/bash
+
+folder=~/Git/conkytimer
+
+
+if pgrep conky; then
+	pkill conky
+else
+	cd $folder
+	echo 300 > currenttime.txt
+	conky -c timer_rc
+fi
+
